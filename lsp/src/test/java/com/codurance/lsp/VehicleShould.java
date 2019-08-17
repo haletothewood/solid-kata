@@ -2,7 +2,7 @@ package com.codurance.lsp;
 
 import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.*;
 
 public class VehicleShould {
   @Test
@@ -11,9 +11,7 @@ public class VehicleShould {
 
     vehicle.startEngine();
 
-    assertThat(vehicle.engineIsStarted())
-      .isTrue();
-
+    assertTrue(vehicle.engineIsStarted());
   }
 
   @Test
@@ -23,22 +21,11 @@ public class VehicleShould {
     vehicle.startEngine();
     vehicle.stopEngine();
 
-    assertThat(vehicle.engineIsStarted())
-      .isFalse();
+    assertFalse(vehicle.engineIsStarted());
   }
 
-
-  public class TestableVehicle extends Vehicle{
-
-    @Override
-    public void fillUpWithFuel() {
-
-    }
-
-    @Override
-    public void chargeBattery() {
-
+  public static class TestableVehicle extends Vehicle {
+    public void fill() {
     }
   }
-
 }
