@@ -23,7 +23,6 @@ public class EmployeeBuilder {
         return this;
     }
 
-
     public EmployeeBuilder withLastName(String lastName) {
         this.lastName = lastName;
         return this;
